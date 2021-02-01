@@ -1,0 +1,3 @@
+[submodule "pymaketool"]
+	path = pymaketool
+	url = git@github.com:ericsonj/pymaketool.git

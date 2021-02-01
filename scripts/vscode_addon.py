@@ -47,6 +47,7 @@ def vscodeGen_launch(projSett, compSett):
     """
     Generate file .vscode/launch.json
     """
+    outputFile = projSett['C_TARGETS']['TARGET']['FILE']
     launch = {
         "version": "0.2.0",
         "configurations": [
@@ -54,7 +55,7 @@ def vscodeGen_launch(projSett, compSett):
                 "name": "(gdb) Launch",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "${workspaceFolder}/Release/pymaketool_dev",
+                "program": "${workspaceFolder}/" + str(outputFile),
                 "args": [],
                 "stopAtEntry": False,
                 "cwd": "${workspaceFolder}",
