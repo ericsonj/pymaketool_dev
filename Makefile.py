@@ -89,6 +89,7 @@ def getLinkerOpts():
         'GENERAL-OPTS': [
         ],
         'LINKER-OPTS': [
+            '-Wl,-Map=Release/pymaketool_dev.map'
         ],
         'LIBRARIES': LIBRARIES
     }
