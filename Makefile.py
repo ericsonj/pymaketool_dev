@@ -82,6 +82,7 @@ def getCompilerOpts():
 def getLinkerOpts():
     return {
         'LINKER-SCRIPT': [
+            '-Wl,-Map=Release/pymaketool_dev.map',
         ],
         'MACHINE-OPTS': [
         ],
