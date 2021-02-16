@@ -15,7 +15,7 @@ Addon(vscode_init)
 
 
 @Makeclass
-class Project():
+class Project(ProjectImp):
 
     LIBRARIES = []
 
