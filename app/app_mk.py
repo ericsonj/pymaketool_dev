@@ -1,4 +1,5 @@
 from pymakelib.Module import ModuleHandle
+from pymakelib.Module import GCC_CompilerOpts
 
 
 def getSrcs(m: ModuleHandle):
@@ -9,6 +10,5 @@ def getIncs(m: ModuleHandle):
     return m.getAllIncsC()
 
 def getCompilerOpts( m:ModuleHandle):
-    opts = m.getGeneralCompilerOpts()
-    opts.setOption('CONTROL-C-OPTS', ['-std=gnu11'])
+    opts = GCC_CompilerOpts(m.getGeneralCompilerOpts())
     return opts

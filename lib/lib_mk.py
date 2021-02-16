@@ -9,7 +9,7 @@ class Libraries(ModuleImp):
     def getIncs(self, m: ModuleHandle):
         return m.getAllIncsC()
     
-    # def getCompilerOpts(self, m:ModuleHandle):
-    #     opts = m.getGeneralCompilerOpts()
-    #     opts.setOption('CONTROL-C-OPTS', ['-std=gnu11'])
-    #     return opts
+    def getCompilerOpts(self, m:ModuleHandle):
+        opts = m.getGeneralCompilerOpts()
+        opts.setOption('CONTROL-C-OPTS', ['-std=c99'])
+        return opts
