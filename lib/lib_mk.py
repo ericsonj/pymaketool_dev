@@ -2,7 +2,7 @@ from pymakelib.Module import AbstractModule, ModuleClass, ModuleHandle
 
 @ModuleClass
 class Lib(AbstractModule):
-
+    
     def getSrcs(self, m: ModuleHandle):
         return m.getAllSrcsC()
 

@@ -1,6 +1,6 @@
 import os
 from os.path import basename
-from pymakelib import ProjectImp, Makeclass
+from pymakelib import IProject, Makeclass
 from pymakelib import MKVARS
 from pymakelib import Toolchain as tool
 from pymakelib.Addon import Addon
@@ -15,7 +15,7 @@ Addon(vscode_init)
 
 
 @Makeclass
-class Project(ProjectImp):
+class Project(IProject):
 
     LIBRARIES = []
 
