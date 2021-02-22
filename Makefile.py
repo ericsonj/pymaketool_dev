@@ -34,7 +34,7 @@ class Project(IProject):
             'TARGET': {
                 'LOGKEY':  'OUT',
                 'FILE':    TARGET,
-                'SCRIPT':  [MKVARS.LD, '-o', '$@', MKVARS.OBJECTS, MKVARS.LDFLAGS]
+                'SCRIPT':  [MKVARS.LD, '-o', '$@', MKVARS.OBJECTS, MKVARS.LDFLAGS, MKVARS.STATIC_LIBS]
             },
             'TARGET_ZIP': {
                 'LOGKEY':   'ZIP',

@@ -7,10 +7,13 @@
 
 #include <stdio.h>
 #include "lib.h"
+#include "module_lib.h"
 
 int main(int argc, const char* argv[]) {
 
     LIB_test("HOLA");
+
+    module_lib_sum(1, 2);
 
 #if __TEST_DEFINE__
     printf("Hello, Define!\n");
