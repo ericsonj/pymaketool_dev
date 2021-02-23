@@ -8,6 +8,10 @@
 #include <stdio.h>
 #include "lib.h"
 #include "module_lib.h"
+#if __TEST_DEFINE__
+#include <stdint.h>
+#else
+#endif
 
 int main(int argc, const char* argv[]) {
 
