@@ -1,12 +1,27 @@
 digraph "source tree" {
     overlap=scale;
-    size="8,10";
+    size="9,4";
     ratio="fill";
     fontsize="16";
     fontname="Helvetica";
 	clusterrank="local";
+
+	"lib.c" [shape=box];
+
+	subgraph cluster_0 {
+		subgraph cluster_01 {
+			label = "src"
+			"lib.c"
+		}
+		subgraph cluster_02 {
+			label = "inc"
+			"lib.h"
+		}
+		"lib.c" -> "lib.h";
+		label = "lib";
+	}
+
 	"main.c" -> "stdio.h"
-	"lib.c" -> "lib.h"
 	"main.c" -> "module_lib.h"
 	"main.c" -> "lib.h"
 	"module_lib.c" -> "module_lib.h"
