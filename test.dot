@@ -1,28 +1,40 @@
-digraph "source tree" {
-    overlap=scale;
-    size="9,4";
-    ratio="fill";
-    fontsize="16";
-    fontname="Helvetica";
-	clusterrank="local";
+digraph module {
+    main_c -> stdio_h;
+    main_c -> lib_h;
+    main_c -> module_lib_h;
+    main_c -> stdint_h;
 
-	"lib.c" [shape=box];
 
-	subgraph cluster_0 {
-		subgraph cluster_01 {
-			label = "src"
-			"lib.c"
-		}
-		subgraph cluster_02 {
-			label = "inc"
-			"lib.h"
-		}
-		"lib.c" -> "lib.h";
-		label = "lib";
-	}
+    subgraph cluster_0 {
+        main_c;
+        label = "application";
+        color = blue;
+    }
+    subgraph cluster_1 {
+        stdio_h;
+        label = "/usr/include";
+        color = blue;
+    }
+    subgraph cluster_2 {
+        lib_h;
+        label = "lib";
+        color = blue;
+    }
+    subgraph cluster_3 {
+        module_lib_h;
+        label = "/PROJECTS/PYTHON/test_module_lib/module_lib";
+        color = blue;
+    }
+    subgraph cluster_4 {
+        stdint_h;
+        label = "/usr/lib/gcc/x86_64-linux-gnu/7/include";
+        color = blue;
+    }
 
-	"main.c" -> "stdio.h"
-	"main.c" -> "module_lib.h"
-	"main.c" -> "lib.h"
-	"module_lib.c" -> "module_lib.h"
+
+    main_c [shape=box label="main.c"];
+    stdio_h [shape=box label="stdio.h"];
+    lib_h [shape=box label="lib.h"];
+    module_lib_h [shape=box label="module_lib.h"];
+    stdint_h [shape=box label="stdint.h"];
 }
