@@ -4,29 +4,27 @@ digraph module {
     main_c -> module_lib_h;
     main_c -> stdint_h;
 
-
     subgraph cluster_0 {
-        lib_c -> lib_h;
-        label = "lib_mk.py";
-        color = blue;
-    }
-    subgraph cluster_1 {
-        module_lib_c -> module_lib_h;
-        label = "extlib_mk.py";
-        color = blue;
-    }
-    subgraph cluster_2 {
         main_c;
         label = "app_mk.py";
         color = blue;
     }
+    subgraph cluster_1 {
+        lib_c -> lib_h;
+        label = "lib_mk.py";
+        color = blue;
+    }
+    subgraph cluster_2 {
+        module_lib_c -> module_lib_h;
+        label = "extlib_mk.py";
+        color = blue;
+    }
 
-
-    lib_c [shape=box label="lib.c"];
-    lib_h [shape=box label="lib.h"];
-    module_lib_c [shape=box label="module_lib.c"];
-    module_lib_h [shape=box label="module_lib.h"];
     main_c [shape=box label="main.c"];
     stdio_h [shape=box label="stdio.h"];
+    lib_h [shape=box label="lib.h"];
+    module_lib_h [shape=box label="module_lib.h"];
     stdint_h [shape=box label="stdint.h"];
+    lib_c [shape=box label="lib.c"];
+    module_lib_c [shape=box label="module_lib.c"];
 }
