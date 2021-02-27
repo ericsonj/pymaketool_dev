@@ -52,6 +52,14 @@ def vscodeGen_launch(projSett, compSett):
         "version": "0.2.0",
         "configurations": [
             {
+                "name": "Python: Current File",
+                "type": "python",
+                "request": "launch",
+                "program": "./pymaketool/scripts/pymaketool",
+                "console": "integratedTerminal",
+                "args": ["all"]
+            },
+            {
                 "name": "(gdb) Launch",
                 "type": "cppdbg",
                 "request": "launch",

@@ -13,7 +13,6 @@ from scripts.vscode_addon import vscode_init
 Addon(EclipseAddon)
 Addon(vscode_init)
 
-
 @Makeclass
 class Project(IProject):
 
@@ -51,7 +50,9 @@ class Project(IProject):
 
     def getCompilerOpts(self, **kwargs):
         PROJECT_DEF = {
-            "__TEST_DEFINE__": 1
+            "__TEST_DEFINE__":   1,
+            'mod':               1,
+            'mod2':              1
         }
 
         return {
