@@ -28,8 +28,24 @@ enum {
     KEY_18,
     KEY_19,
 };
-const char* names[2] = {
-    "NAME1",
-    "NAME2",
+enum {
+    HTTP_200 = 0,
 };
+#define HTTP_REQUEST_VALUES  =\
+    {\
+        "OK",\
+    }
+    
+
+#ifndef DECL_HTTP_REQUEST
+#define _DECL extern
+#define _VAR
+#else
+#define _DECL
+#define _VAR  HTTP_REQUEST_VALUES
+#endif
+    
+
+_DECL char* HTTP_REQUEST[1] _VAR;
+    
 #endif // _MODS_MOD_H_PY_

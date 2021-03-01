@@ -1,18 +1,21 @@
-from pymakelib.pycodegen import *
+from pymakelib import pycodegen as p
 
-@HEADER_FILE(name=__file__)
+
+@p.HEADER_FILE(name = __file__)
 def header_file():
 
-    if defined('mod'):
-        out("#define mod      _MODULE(mod)")
+    if p.defined('mod'):
+        p.out("#define mod      _MODULE(mod)")
 
-    if defined('mod2'):
-        out("#define mod2     _MODULE(mod2)")
+    if p.defined('mod2'):
+        p.out("#define mod2     _MODULE(mod2)")
 
-    comment("""
+    p.comment("""
     Key map
     """)
-    
-    enum_sf("KEY_{}", range(1,20), init=1)
 
-    cstrarray("names", ["NAME1", "NAME2"])
+    p.enum_sf("KEY_{}", range(1,20), init=1)
+
+    p.enum_str_map("HTTP_REQUEST", {
+        'HTTP_200': 'OK'
+    })
