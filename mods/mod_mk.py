@@ -1,12 +1,10 @@
 from pymakelib import Module
-from pymakelib import log
 
 @Module.ModuleClass
 class mod(Module.AbstractModule):
 
-    def getSrcs(self, mh: Module.ModuleHandle) -> list:
-        log.info("HOLA")
+    def getSrcs(self):
         return self.findSrcs(Module.SrcType.C)
     
-    def getIncs(self, mh: Module.ModuleHandle) -> list:
+    def getIncs(self):
         return self.findIncs(Module.IncType.C)

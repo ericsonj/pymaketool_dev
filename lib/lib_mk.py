@@ -1,15 +1,16 @@
-from pymakelib.Module import AbstractModule, ModuleClass, ModuleHandle
+from pymakelib import Module
+from pymakelib import Project
 
-@ModuleClass
-class Lib(AbstractModule):
+@Module.ModuleClass
+class Lib(Module.AbstractModule):
     
-    def getSrcs(self, m: ModuleHandle):
-        return m.getAllSrcsC()
+    def getSrcs(self):
+        return self.getAllSrcsC()
 
-    def getIncs(self, m: ModuleHandle):
-        return m.getAllIncsC()
+    def getIncs(self):
+        return self.getAllIncsC()
     
-    def getCompilerOpts(self, m:ModuleHandle):
-        opts = m.getGeneralCompilerOpts()
-        opts.setOption('CONTROL-C-OPTS', ['-std=c99'])
+    def getCompilerOpts(self):
+        opts = Project.getCompilerOpts()
+        opts['CONTROL-C-OPTS'] = ['-std=c99']
         return opts

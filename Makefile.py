@@ -5,6 +5,7 @@ from pymakelib import MKVARS
 from pymakelib import Toolchain as tool
 from pymakelib.Addon import Addon
 from pymakelib.eclipse_addon import EclipseAddon
+from pymakelib import D
 
 # Import addons
 from scripts.vscode_addon import vscode_init
@@ -51,8 +52,8 @@ class Project(IProject):
     def getCompilerOpts(self, **kwargs):
         PROJECT_DEF = {
             "__TEST_DEFINE__":   1,
-            'mod':               1,
-            'mod2':              1
+            'mod':               None,
+            'mod2':              D('web.h'),
         }
 
         return {

@@ -1,16 +1,14 @@
-from pymakelib.Module import ModuleHandle, ModuleClass, AbstractModule
-from pymakelib.Module import GCC_CompilerOpts
+from pymakelib import Module
 
-@ModuleClass
-class App(AbstractModule):
+@Module.ModuleClass
+class App(Module.AbstractModule):
 
-    def getSrcs(self, m: ModuleHandle):
-        srcs = m.getAllSrcsC();
-        return srcs
+    def getSrcs(self):
+        return self.getAllSrcsC()
 
-    def getIncs(self, m: ModuleHandle):
-        return m.getAllIncsC()
+    def getIncs(self):
+        return self.getAllIncsC()
 
-    def getCompilerOpts(self, m:ModuleHandle):
-        opts = GCC_CompilerOpts(m.getGeneralCompilerOpts())
-        return opts
+    # def getCompilerOpts(self):
+    #     opts = GCC_CompilerOpts(m.getGeneralCompilerOpts())
+    #     return opts
