@@ -5,10 +5,10 @@ from pymakelib import pycodegen as p
 def header_file():
 
     if p.defined('mod'):
-        p.out("#define mod      _MODULE(mod)")
+        p.out("#define DECL_MOD      _MODULE(mod)")
 
     if p.defined('mod2'):
-        p.out("#define mod2     _MODULE(mod2)")
+        p.out("#define DECL_MOD2     _MODULE(mod2)")
 
     p.comment("""
     Key map

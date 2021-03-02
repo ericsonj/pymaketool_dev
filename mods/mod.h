@@ -1,7 +1,7 @@
 #ifndef _MODS_MOD_H_PY_
 #define _MODS_MOD_H_PY_
-#define mod      _MODULE(mod)
-#define mod2     _MODULE(mod2)
+#define DECL_MOD      _MODULE(mod)
+#define DECL_MOD2     _MODULE(mod2)
 /**
  * 
  * Key map

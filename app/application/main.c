@@ -14,16 +14,19 @@
 #endif
 #include "main.h"
 
+#define DECL_HTTP_REQUEST
+#include "mod.h"
+
 int main(int argc, const char* argv[]) {
 
     LIB_test("HOLA");
 
     module_lib_sum(1, 2);
 
-    printf(names[0]);
+    printf(HTTP_REQUEST[0]);
 
 #if __TEST_DEFINE__
-    printf("Hello, Define!\n");
+    printf("\nHello, Define!\n");
 #else
     printf("Hello, World!\n");
 #endif
