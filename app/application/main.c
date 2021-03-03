@@ -23,7 +23,7 @@ int main(int argc, const char* argv[]) {
 
     module_lib_sum(1, 2);
 
-    printf(HTTP_REQUEST[0]);
+    printf("%s", HTTP_REQUEST[0]);
 
 #if __TEST_DEFINE__
     printf("\nHello, Define!\n");
