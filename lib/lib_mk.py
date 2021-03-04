@@ -1,5 +1,5 @@
 from pymakelib import Module
-from pymakelib import Project
+from pymakelib import project
 
 @Module.ModuleClass
 class Lib(Module.AbstractModule):
@@ -11,6 +11,6 @@ class Lib(Module.AbstractModule):
         return self.getAllIncsC()
     
     def getCompilerOpts(self):
-        opts = Project.getCompilerOpts()
+        opts = project.getCompilerOpts()
         opts['CONTROL-C-OPTS'] = ['-std=c99']
         return opts
