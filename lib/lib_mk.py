@@ -1,5 +1,8 @@
 from pymakelib import Module
 from pymakelib import project
+from pymakelib import Logger
+
+log = Logger.getLogger()
 
 @Module.ModuleClass
 class Lib(Module.AbstractModule):
