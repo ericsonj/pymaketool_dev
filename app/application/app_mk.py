@@ -1,7 +1,7 @@
-from pymakelib import Module
+from pymakelib import module
 
-@Module.ModuleClass
-class App(Module.AbstractModule):
+@module.ModuleClass
+class App(module.AbstractModule):
 
     def getSrcs(self):
         return self.getAllSrcsC()

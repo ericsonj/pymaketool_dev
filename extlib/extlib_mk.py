@@ -1,10 +1,10 @@
-from pymakelib import Module
+from pymakelib import module
 
-@Module.ModuleClass
-class ExtLib(Module.ExternalModule):
+@module.ModuleClass
+class ExtLib(module.ExternalModule):
     
     def init(self):
-        return Module.StaticLibrary("modulelib", "Release", rebuild=True)
+        return module.StaticLibrary("modulelib", "Release", rebuild=True)
      
     def getModulePath(self)->str:
         return '/PROJECTS/PYTHON/test_module_lib/module_lib/module_lib_mk.py'

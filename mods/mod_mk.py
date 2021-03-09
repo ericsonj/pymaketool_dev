@@ -1,5 +1,5 @@
-from pymakelib import Module
+from pymakelib import module
 
-@Module.ModuleClass
-class mod(Module.BasicCModule):
+@module.ModuleClass
+class mod(module.BasicCModule):
     pass

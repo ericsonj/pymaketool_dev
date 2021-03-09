@@ -1,11 +1,11 @@
-from pymakelib import Module
+from pymakelib import module
 from pymakelib import project
 from pymakelib import Logger
 
 log = Logger.getLogger()
 
-@Module.ModuleClass
-class Lib(Module.AbstractModule):
+@module.ModuleClass
+class Lib(module.AbstractModule):
     
     def getSrcs(self):
         return self.getAllSrcsC()
