@@ -2,17 +2,17 @@ import os
 from os.path import basename
 from pymakelib import AbstractMake, Makeclass
 from pymakelib import MKVARS
-from pymakelib import Toolchain as tool
-from pymakelib.Addon import Addon
+from pymakelib import toolchain as tool
+from pymakelib import addon
 from pymakelib.eclipse_addon import EclipseAddon
-from pymakelib import D
+from pymakelib import Define as D
 
 # Import addons
 from scripts.vscode_addon import vscode_init
 
 # Add addons
-Addon(EclipseAddon)
-Addon(vscode_init)
+addon.add(EclipseAddon)
+addon.add(vscode_init)
 
 @Makeclass
 class Project(AbstractMake):
@@ -47,7 +47,7 @@ class Project(AbstractMake):
 
 
     def getCompilerSet(self, **kwargs):
-        return tool.confLinuxGCC()
+        return tool.get_gcc_linux()
 
     def getCompilerOpts(self, **kwargs):
         PROJECT_DEF = {
