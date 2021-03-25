@@ -1,0 +1,30 @@
+FROM fedora:latest
+
+LABEL maintainer="Ericson Joseph <ericsonjoseph@gmail.com>"
+
+RUN dnf update ; dnf upgrade -y
+
+RUN DEBIAN_FRONTEND="noninteractive" dnf -y install tzdata
+
+RUN dnf install -y openssl tree
+RUN dnf install -y gcc
+ 
+# RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -u 1001 ubuntu -p "$(openssl passwd -1 ubuntu)"
+
+RUN dnf install -y sudo && \
+    useradd -rm -d /home/fedora -s /bin/bash -g root -u 1001 fedora -p "$(openssl passwd -1 fedora)" && \
+    echo "fedora ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user && \
+    chmod 0440 /etc/sudoers.d/user
+
+USER fedora
+WORKDIR /home/fedora
+ENV PATH=${PATH}:/home/fedora/.local/bin
+
+
+# RUN sudo dnf install python3 python3-pip python3-gobject gtk3 time zip
+# RUN pip3 install pymaketool
+# RUN pymaketool -v
+# RUN pynewproject CLinuxGCC project_name=hello author="Ericson Joseph"
+# RUN cd hello
+# RUN make clean
+# RUN make

@@ -1,0 +1,28 @@
+FROM archlinux:latest
+
+LABEL maintainer="Ericson Joseph <ericsonjoseph@gmail.com>"
+
+RUN pacman -Suy --noconfirm
+
+RUN DEBIAN_FRONTEND="noninteractive" pacman -Sy --noconfirm tzdata
+
+RUN pacman -Sy --noconfirm openssl tree
+RUN pacman -Sy --noconfirm gcc make
+ 
+RUN pacman -Sy --noconfirm sudo && \
+    useradd -rm -d /home/arch -s /bin/bash -g root -u 1001 arch -p "$(openssl passwd -1 arch)" && \
+    echo "arch ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user && \
+    chmod 0440 /etc/sudoers.d/user
+
+USER arch
+WORKDIR /home/arch
+ENV PATH=${PATH}:/home/arch/.local/bin
+
+
+# RUN sudo pacman -S gcc make python python-pip python-gobject gtk3 time zip
+# RUN pip3 install pymaketool
+# RUN pymaketool -v
+# RUN pynewproject CLinuxGCC project_name=hello author="Ericson Joseph"
+# RUN cd hello
+# RUN make clean
+# RUN make
