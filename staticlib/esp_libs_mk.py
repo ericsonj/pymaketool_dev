@@ -25,7 +25,7 @@ import subprocess
 @module.ModuleClass
 class app_trace(module.AbstractModule):
     def init(self):
-        staticLib = StaticLibrary(name='app_trace', outputDir="build/app_trace/")
+        staticLib = StaticLibrary(name='app_trace', outputDir="build/app_trace/", lib_linked_opts="-u esp_app_desc", orden=2)
         staticLib.lib_objs = ""
         staticLib.lib_objs_compile = ""
         command = "make -f ESP_Makefile /home/ericson/PROJECTS/ESP32/esp32hello/build/app_trace/libapp_trace.a"
