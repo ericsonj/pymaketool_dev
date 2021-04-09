@@ -31,6 +31,11 @@ class Project(AbstractMake):
         TARGET = FOLDER_OUT + PROJECT_NAME
 
         TARGETS = {
+            'TARGET_TEST': {
+                'LOGKEY':  'TEST',
+                'FILE':     'hola.text',
+                'SCRIPT': ['touch', 'hola.text']
+            },
             'TARGET': {
                 'LOGKEY':  'OUT',
                 'FILE':    TARGET,
