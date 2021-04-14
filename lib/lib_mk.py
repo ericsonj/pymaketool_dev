@@ -5,8 +5,12 @@ from pymakelib import Logger
 log = Logger.getLogger()
 
 @module.ModuleClass
-class Lib(module.AbstractModule):
+class Lib(module.StaticLibraryModule):
     
+    def get_config(self):
+        self.name = "lib"
+        self.output_dir = "Release"
+
     def getSrcs(self):
         return self.getAllSrcsC()
 
