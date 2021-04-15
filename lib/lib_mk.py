@@ -1,20 +1,17 @@
 from pymakelib import module
-from pymakelib import project
-from pymakelib import Logger
 
-log = Logger.getLogger()
+def add_library(name, outputdir):
 
-@module.ModuleClass
-class Lib(module.StaticLibraryModule):
-    
-    def get_name(self) -> str:
-        return "lib"
+    @module.ModuleClass
+    class _(module.BasicCModule, module.StaticLibraryModule):
+        
+        def get_module_name(self):
+            return str(name).capitalize()
 
-    def get_output_dir(self) -> str:
-        return "Release"
+        def get_name(self) -> str:
+            return name
 
-    def getSrcs(self):
-        return self.getAllSrcsC()
+        def get_output_dir(self) -> str:
+            return outputdir
 
-    def getIncs(self):
-        return self.getAllIncsC()
+add_library(name="Lib", outputdir="Release")
