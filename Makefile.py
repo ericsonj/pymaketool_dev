@@ -6,6 +6,7 @@ from pymakelib import toolchain as tool
 from pymakelib import addon
 from pymakelib.eclipse_addon import EclipseAddon
 from pymakelib import Define as D
+from pymakelib import pym
 
 # Import addons
 from scripts.vscode_addon import vscode_init
@@ -99,3 +100,15 @@ class Project(AbstractMake):
             ],
             'LIBRARIES': self.LIBRARIES
         }
+
+
+pym.add_library(
+    "test",
+    "Release",
+    srcs=[
+        'test.c'
+    ],
+    incs=[
+        "inc"
+    ]
+)
