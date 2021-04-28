@@ -102,13 +102,13 @@ class Project(AbstractMake):
         }
 
 
-pym.add_library(
-    "test",
-    "Release",
-    srcs=[
-        'test.c'
-    ],
-    incs=[
-        "inc"
-    ]
-)
+# pym.add_library(
+#     "test",
+#     "Release",
+#     srcs=[
+#         'test.c'
+#     ],
+#     incs=[
+#         "inc"
+#     ]
+# )

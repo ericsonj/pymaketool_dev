@@ -1,0 +1,17 @@
+CC = gcc
+CXX = g++
+LD = gcc
+AR = ar
+AS = as
+OBJCOPY = objcopy
+SIZE = size
+OBJDUMP = objdump
+NM = nm
+RANLIB = ranlib
+STRINGS = strings
+STRIP = strip
+CXXFILT = c++filt
+ADDR2LINE = addr2line
+READELF = readelf
+ELFEDIT = elfedit
+CFLAGS = -D__TEST_DEFINE__=1 -Dmod -Dmod2=web.h    -g3 -MP -MMD  -std=gnu11  

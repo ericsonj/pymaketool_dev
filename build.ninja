@@ -1,0 +1,7 @@
+include vars.ninja
+
+rule compile
+  command = $CC $CFLAGS $INCS -c $in -o $out
+  description = CC $in
+
+build main.o: compile app/application/main.c
