@@ -23,7 +23,8 @@ class Project(AbstractMake):
     def getProjectSettings(self, **kwargs):
         return {
             'PROJECT_NAME': basename(os.getcwd()),
-            'FOLDER_OUT':   'Release/Objects/'
+            'FOLDER_OUT':   'Release',
+            'TEST':         'TEST_HOLA'
         }
 
     def getTargetsScript(self, **kwargs):
